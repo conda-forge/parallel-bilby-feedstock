@@ -52,6 +52,7 @@ test:
     - parallel_bilby.utils
   requires:
     - openssh  # [linux]
+    - ptemcee
   commands:
     - parallel_bilby_generation --help
     - parallel_bilby_analysis --help
