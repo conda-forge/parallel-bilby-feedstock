@@ -1,5 +1,5 @@
 {% set name = "parallel-bilby" %}
-{% set version = "0.1.6" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/parallel_bilby-{{ version }}.tar.gz
-  sha256: 0f01dbcb5e8408aa0bde74e226e3e894412097252ad0b6d27dd32f38cfea9e1f
+  sha256: 3efa75f3d76c09649084767adc1f445828c7ca3f980e304a4b8aa57e40167dac
 
 build:
   number: 0
@@ -52,6 +52,7 @@ test:
     - parallel_bilby.utils
   requires:
     - openssh  # [linux]
+    - ptemcee
   commands:
     - parallel_bilby_generation --help
     - parallel_bilby_analysis --help
