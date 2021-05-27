@@ -10,7 +10,7 @@ source:
   sha256: aa452c04f319d43aff3ed370150a017b43c1e0b659ca1a386e788814a866bf04
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - parallel_bilby_generation=parallel_bilby.generation:main
@@ -24,14 +24,14 @@ requirements:
     - python >=3.5
     - setuptools
   run:
-    - bilby >=0.6.9
-    - bilby_pipe >=0.3.12
+    - bilby >=1.1.1
+    - bilby_pipe >=1.0.3
     - corner
     - dynesty >=1.0.0
     - future
     - gwpy
     - matplotlib-base
-    - mpi4py
+    - mpi4py >3.0.0
     - nestcheck
     - numpy
     - pandas
@@ -52,8 +52,12 @@ test:
     - parallel_bilby.utils
   requires:
     - openssh  # [linux]
+    - pip
     - ptemcee
   commands:
+    # check requirements
+    - python -m pip check
+    # check entry points
     - parallel_bilby_generation --help
     - parallel_bilby_analysis --help
     - parallel_bilby_ptemcee_analysis --help
