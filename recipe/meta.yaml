@@ -1,5 +1,5 @@
 {% set name = "parallel-bilby" %}
-{% set version = "1.1.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/parallel_bilby-{{ version }}.tar.gz
-  sha256: 4018a86c2ca33b6f410bb605ada070a278218420ced798fbca4a62e8d4d2fac8
+  sha256: 6f9d83d139c7d983814ac0af90a5d5cceef4e17371ad3be60badba18e052fb1a
 
 build:
   number: 0
