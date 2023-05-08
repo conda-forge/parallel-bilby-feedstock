@@ -43,24 +43,21 @@ requirements:
 test:
   imports:
     - parallel_bilby
-    #- parallel_bilby.analysis
+    - parallel_bilby.analysis
     - parallel_bilby.generation
     - parallel_bilby.parser
-    #- parallel_bilby.ptemcee_analysis
     - parallel_bilby.schwimmbad_fast
     - parallel_bilby.slurm
     - parallel_bilby.utils
   requires:
     - openssh  # [linux]
     - pip
-    - ptemcee
   commands:
     # check requirements
     - python -m pip check
     # check entry points
     - parallel_bilby_generation --help
     - parallel_bilby_analysis --help
-    - parallel_bilby_ptemcee_analysis --help
 
 about:
   home: https://lscsoft.docs.ligo.org/parallel_bilby/
