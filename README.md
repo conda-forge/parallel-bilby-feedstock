@@ -1,11 +1,11 @@
-About parallel-bilby
-====================
+About parallel-bilby-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/parallel-bilby-feedstock/blob/main/LICENSE.txt)
 
 Home: https://lscsoft.docs.ligo.org/parallel_bilby/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/parallel-bilby-feedstock/blob/main/LICENSE.txt)
 
 Summary: Running bilby at scale
 
