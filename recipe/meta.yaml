@@ -50,6 +50,7 @@ test:
     - parallel_bilby.slurm
     - parallel_bilby.utils
   requires:
+    - dynesty <3.0.0a0
     - openssh  # [linux]
     - pip
     - python {{ python_min }}
