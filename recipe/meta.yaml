@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/parallel_bilby-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/parallel_bilby-{{ version }}.tar.gz
   sha256: bb49a2dc180a9c953c0b10d6be372edcde5c974b9161e0ba733a17b6020c09d4
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - parallel_bilby_generation=parallel_bilby.generation:main
@@ -21,7 +21,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python {{ python_min }}
     - setuptools
   run:
     - bilby >=1.1.1
@@ -35,8 +35,8 @@ requirements:
     - nestcheck
     - numpy
     - pandas
-    - python >=3.5
-    - schwimmbad
+    - python >={{ python_min }}
+    - schwimmbad <0.4.0a0
     - scipy >=1.2.0
     - tqdm
 
@@ -50,8 +50,10 @@ test:
     - parallel_bilby.slurm
     - parallel_bilby.utils
   requires:
+    - dynesty <3.0.0a0
     - openssh  # [linux]
     - pip
+    - python {{ python_min }}
   commands:
     # check requirements
     - python -m pip check
